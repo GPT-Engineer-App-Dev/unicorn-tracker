@@ -4,6 +4,9 @@ import Index from "./pages/Index.jsx";
 import UnicornManagement from "./pages/UnicornManagement.jsx";
 import BreedingPairs from "./pages/BreedingPairs.jsx";
 import ActivityLog from "./pages/ActivityLog.jsx";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "sonner";
+import SidebarLayout from "./components/layouts/sidebar.jsx";
 
 const queryClient = new QueryClient();
 
