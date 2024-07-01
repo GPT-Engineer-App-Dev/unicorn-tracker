@@ -29,9 +29,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
-function SharedLayout() {
+function SidebarLayout() {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-muted/40 md:block">
@@ -39,18 +39,39 @@ function SharedLayout() {
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <a href="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Acme Inc</span>
+              <span className="">Unicorn Breeding Tracker</span>
             </a>
           </div>
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
               >
                 <Home className="h-4 w-4" />
-                Home
-              </a>
+                Dashboard
+              </Link>
+              <Link
+                to="/unicorns"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-foreground"
+              >
+                <Users className="h-4 w-4" />
+                Unicorn Management
+              </Link>
+              <Link
+                to="/breeding-pairs"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-foreground"
+              >
+                <LineChart className="h-4 w-4" />
+                Breeding Pairs
+              </Link>
+              <Link
+                to="/activity-log"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-foreground"
+              >
+                <Bell className="h-4 w-4" />
+                Activity Log
+              </Link>
             </nav>
           </div>
         </div>
@@ -75,15 +96,36 @@ function SharedLayout() {
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
+                  <span className="sr-only">Unicorn Breeding Tracker</span>
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Home className="h-5 w-5" />
-                  Home
-                </a>
+                  Dashboard
+                </Link>
+                <Link
+                  to="/unicorns"
+                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                >
+                  <Users className="h-5 w-5" />
+                  Unicorn Management
+                </Link>
+                <Link
+                  to="/breeding-pairs"
+                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                >
+                  <LineChart className="h-5 w-5" />
+                  Breeding Pairs
+                </Link>
+                <Link
+                  to="/activity-log"
+                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                >
+                  <Bell className="h-5 w-5" />
+                  Activity Log
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
@@ -115,4 +157,4 @@ function SharedLayout() {
   )
 }
 
-export default SharedLayout;
+export default SidebarLayout;
